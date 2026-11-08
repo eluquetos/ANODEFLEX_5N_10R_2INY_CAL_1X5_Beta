@@ -1,17 +1,9 @@
-# ANODEFLEX_5N_10R_2INY_CAL_1X5__v1.0.0
+# ANODEFLEX_5N_10R_2INY_CAL_1X5_Beta
 
-Aplicación para calibrar diez ramas mediante dos mediciones de campo independientes y regularlas con una sola inyección.
+Aplicación Beta para calibrar 10 ramas en 5 nodos mediante tensiones de fuente y de nodo y corrientes medidas con los reóstatos en 0 Ω. Las tensiones deben medirse respecto a una misma referencia.
 
-## Mediciones de campo
+La medición A comprende los nodos 1 a 3. La medición B comprende los nodos 4 a 5. Cada Rc es la caída de tensión en el tramo dividida por la corriente de ese tramo. Cada resistencia fija es la tensión del nodo dividida por la corriente de la rama. Se rechazan tensiones crecientes aguas abajo.
 
-Con todos los reóstatos en 0 Ω, el lado A se mide con VA → Rc1 → nodo 1 → Rc2 → nodo 2 → Rc3 → nodo 3. El lado B se mide con VB → Rc4 → nodo 4 → Rc5 → nodo 5. Cada nodo tiene dos ramas. Cada tramo de cable lleva únicamente la corriente de sus ramas aguas abajo dentro de su medición.
+Una sola fuente alimenta los 5 nodos en regulación. La resistencia Rc4 medida entre la fuente B y el nodo 4 se utiliza entre los nodos 3 y 4; verifique que corresponda al cable reconectado. El voltaje de trabajo es independiente de los voltajes de medición. La aplicación permite ajustar los reóstatos, exportar e importar casos e imprimir resultados.
 
-## Regulación
-
-Para regular, conecte Rc4 entre los nodos 3 y 4: una fuente alimenta en serie Rc1 a Rc5 desde el nodo 1. El voltaje de trabajo es independiente de VA y VB. El ajuste asistido calcula el voltaje mínimo y los reóstatos para las diez corrientes objetivo; si supera el máximo configurado, indica que el ajuste no es viable. También se pueden modificar el voltaje y los reóstatos manualmente.
-
-La aplicación permite exportar e importar casos JSON e imprimir informes. GitHub Pages sirve la carpeta `docs`.
-
-## Pruebas
-
-Ejecute `node tests/model.test.js` y `node tests/static.test.js`.
+Ejecute `node tests/model.test.js`, `node tests/static.test.js` y `node tests/app.test.js`.
