@@ -7,3 +7,5 @@ La medición A comprende los nodos 1 a 3. La medición B comprende los nodos 4 a
 Una sola fuente alimenta los 5 nodos en regulación. La resistencia Rc4 medida entre la fuente B y el nodo 4 se utiliza entre los nodos 3 y 4; verifique que corresponda al cable reconectado. El voltaje de trabajo es independiente de los voltajes de medición. La aplicación permite ajustar los reóstatos, exportar e importar casos e imprimir resultados.
 
 Ejecute `node tests/model.test.js`, `node tests/static.test.js` y `node tests/app.test.js`.
+
+En regulación, ingrese una corriente común y pulse «Aplicar a las 10 ramas». Después puede cambiar cada objetivo individualmente. El ajuste asistido calcula la tensión mínima y reemplaza los valores de los reóstatos.
